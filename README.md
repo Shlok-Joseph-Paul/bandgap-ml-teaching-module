@@ -4,17 +4,50 @@
 
 This repository contains a beginner-friendly materials informatics module for predicting experimental semiconductor band gaps from chemical formula. It is designed for advanced undergraduate chemistry, materials science, and related courses that want a hands-on introduction to machine learning with chemically meaningful descriptors.
 
-Students work through a Jupyter notebook that uses `pandas`, `numpy`, `matplotlib`, `scikit-learn`, `pymatgen`, and `matminer` to:
+Students work through a Jupyter notebook that uses:
 
-- load a public matminer dataset of experimental band gaps,
-- parse chemical formulas into `pymatgen` `Composition` objects,
-- convert formulas into numerical composition descriptors,
-- train a naive baseline model and a random forest model,
-- evaluate model performance using MAE and R2,
-- visualize predicted vs. actual band gaps,
-- interpret feature importances,
-- inspect the largest model errors, and
-- reflect on chemistry, data quality, and model limitations.
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `scikit-learn`
+- `pymatgen`
+- `matminer`
+
+The notebook guides students through loading experimental materials data, parsing chemical formulas, generating composition descriptors, training regression models, evaluating predictions, and reflecting on model limitations.
+
+## Student quick start
+
+1. Click the **Open in Colab** badge.
+2. Run the setup cell.
+3. Choose **Runtime -> Run all**.
+4. Work through the notebook.
+5. Answer the questions in `teaching_materials/student_worksheet.md`.
+
+No local Python installation is required.
+
+## Instructor materials
+
+- Student notebook: `notebooks/01_predicting_bandgaps_student.ipynb`
+- Student worksheet: `teaching_materials/student_worksheet.md`
+- Instructor guide: `teaching_materials/instructor_guide.md`
+- Manuscript outline: `manuscript/manuscript_outline.md`
+- Generated figures: `figures/`
+
+## What Students Will Do
+
+Students will:
+
+- load a public `matminer` dataset of experimental band gaps,
+- inspect formulas such as Si, GaAs, TiO2, PbS, CdTe, and CsPbBr3,
+- convert formulas into `pymatgen` `Composition` objects,
+- generate Magpie composition features with `matminer`,
+- train a `DummyRegressor` baseline model,
+- train a `RandomForestRegressor` model,
+- evaluate models using MAE and R2,
+- create a predicted-vs-actual band gap plot,
+- create a feature-importance plot,
+- identify the largest model errors, and
+- discuss chemistry, data quality, and model limitations.
 
 ## Repository Structure
 
@@ -33,17 +66,9 @@ bandgap-ml-teaching-module/
     `-- manuscript_outline.md
 ```
 
-## Quick Start
+## Run Locally
 
-### Run Online with Google Colab
-
-Click the **Open in Colab** badge at the top of this README to run the notebook online without installing Python locally. The notebook includes a setup cell that installs the required packages when it detects Google Colab.
-
-Note: this repository is currently private. Students will need access to the GitHub repository, or the repository should be made public, for the Colab badge to open smoothly.
-
-### Run Locally
-
-Create and activate a Python environment, then install the required packages:
+Google Colab is the recommended route for students. To run the notebook locally instead, create and activate a Python environment:
 
 ```bash
 python3 -m venv .venv
@@ -58,11 +83,13 @@ Launch Jupyter:
 jupyter lab
 ```
 
-Open `notebooks/01_predicting_bandgaps_student.ipynb` and run the cells in order.
+Then open `notebooks/01_predicting_bandgaps_student.ipynb` and run the cells in order.
 
 ## Dataset
 
-The notebook uses the `matbench_expt_gap` dataset available through `matminer.datasets.load_dataset`. This dataset contains experimentally measured band gaps paired with chemical compositions. Students should treat it as a real scientific dataset: useful, imperfect, and shaped by measurement conditions, reporting choices, and the limits of composition-only representations.
+The notebook uses the `matbench_expt_gap` dataset available through `matminer.datasets.load_dataset`. This dataset contains experimentally measured band gaps paired with chemical compositions.
+
+Students should treat the dataset as real scientific data: useful, imperfect, and shaped by measurement conditions, reporting choices, and the limits of composition-only representations.
 
 ## Learning Goals
 
