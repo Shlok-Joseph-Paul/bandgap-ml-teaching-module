@@ -81,6 +81,20 @@ Large errors can reveal the limits of a composition-only model.
 3. What information might the model be missing for these cases?
 4. In your answer, consider crystal structure, polymorphs, defects, stoichiometry, synthesis history, and measurement uncertainty.
 
+## Optional Extension: Improving the Model and Studying Edge Cases
+
+The optional notebook extension asks whether a more flexible model helps and whether model errors are concentrated in certain chemical families.
+
+1. In the edge-case clinic, are the largest errors mostly high-gap or low-gap materials?
+2. Are the largest errors mostly overpredictions or underpredictions? Use the signed error column in your answer.
+3. Which simple chemical family has the largest mean absolute error? Which has the smallest?
+4. Does the `HistGradientBoostingRegressor` improve MAE compared with the random forest?
+5. Does the model improvement appear to help all chemical families equally?
+6. Compare the built-in random forest feature importances with the permutation importances. Which features appear important in both lists?
+7. Why should feature importance not automatically be interpreted as causation?
+8. Which missing information would likely help the most for the difficult edge cases: structure, processing, defects, dimensionality, or measurement details?
+9. Why might composition-only prediction be especially limited for quantum dots and nanocrystals?
+
 ## 9. Reflection Questions
 
 Use these questions to connect the machine-learning workflow back to materials chemistry.

@@ -78,6 +78,20 @@ Discuss:
 - how structure, phase, defects, temperature, or measurement method could change the target value, and
 - what ethical or practical caution is needed when screening materials computationally.
 
+### Optional Extension: 30 to 60 minutes
+
+The notebook includes an optional extension on edge-case analysis, chemical-family error trends, gradient boosting, and permutation importance. This extension works well for a longer class period, a recitation, or homework after students complete the main notebook.
+
+Use the extension when you want students to:
+
+- compare the random forest with a more flexible tree-based model,
+- ask whether error is distributed evenly across chemical families,
+- distinguish built-in feature importance from permutation importance,
+- connect large model errors to missing chemistry and structure, and
+- think about why composition-only prediction is especially limited for quantum dots and nanocrystals.
+
+For a shorter class, you can skip the gradient boosting and permutation importance sections and use only the edge-case clinic as a discussion prompt.
+
 ## Expected Outcomes
 
 Exact numerical results may vary with package versions and random seeds, but students should usually observe:
@@ -111,7 +125,7 @@ For a shorter in-class run, students can set `MAX_ROWS` in the notebook to a sma
 
 ### Some descriptors contain missing values
 
-This is expected. The notebook uses median imputation inside scikit-learn pipelines so missing feature values do not stop model training.
+This is expected. The notebook drops rows with missing target values or failed Magpie featurization so the beginner workflow uses a clean numerical feature table. In a more advanced course, you can discuss imputation as an alternative.
 
 ### Students overinterpret feature importance
 
@@ -130,6 +144,7 @@ Use any combination of:
 
 ## Extension Activities
 
+- Use the included optional extension for a longer class or homework assignment.
 - Replace the random forest with ridge regression, gradient boosting, or k-nearest neighbors.
 - Compare performance using only simple stoichiometric features versus the full matminer feature set.
 - Use cross-validation instead of a single train/test split.
