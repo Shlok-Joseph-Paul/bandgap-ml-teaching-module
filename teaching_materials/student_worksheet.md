@@ -118,6 +118,16 @@ The optional notebook extension asks whether a more flexible model helps and whe
 
 In the interactive challenge, you will use chemistry intuition to choose feature groups, compare model settings, and test whether your choices improve overall or family-specific band gap prediction.
 
+### Magpie descriptor intuition
+
+Before choosing feature groups, use the Magpie Feature Explorer in the notebook to connect descriptor names to chemistry.
+
+1. Choose one formula from the notebook examples. Explain three Magpie descriptors for that formula in plain language.
+2. For one elemental property, compare the `mean` and `range` descriptors. What different chemical information do they capture?
+3. Identify one descriptor related to bonding, one related to atomic size, and one related to electron count.
+4. Before running the model, which descriptor groups do you predict will be most useful for band gap prediction? Explain your chemical reasoning.
+5. After running the model, did the important features match your intuition? Where did the model surprise you?
+
 State your hypothesis before running experiments:
 
 ```text

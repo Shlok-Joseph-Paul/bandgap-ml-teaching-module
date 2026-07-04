@@ -117,6 +117,18 @@ Use these short explanations when introducing or debriefing the major concepts.
 - Feature importance: Feature importance identifies descriptors the model used, not necessarily physical causes. Correlated features and hidden variables can complicate interpretation.
 - Edge-case analysis: The worst predictions are useful teaching examples because they expose missing information such as structure, polymorph, defects, processing, sample size, or measurement conditions.
 
+## Teaching Magpie Descriptors
+
+Use the Magpie descriptor section to slow students down before they treat feature names as opaque model inputs.
+
+- Emphasize that Magpie features are elemental-property summaries, not direct electronic-structure calculations.
+- Point out that each feature name combines a statistic and an elemental property, such as `mean Electronegativity` or `range CovalentRadius`.
+- Use `PbS` as a conceptual example: Pb and S differ in electronegativity, atomic size, atomic weight, and valence-electron patterns, all of which may correlate with band gap trends.
+- Ask students to distinguish a chemically meaningful descriptor from a causal explanation. A useful predictor is not automatically the physical reason for a band gap.
+- The feature explorer works well as a five-minute pair activity before the modeling section or as preparation for the interactive challenge.
+- For discussion, compare oxides, chalcogenides, halides, and heavy-element semiconductors. Students should connect descriptor values to bonding, periodic trends, and missing structural information.
+- Remind students that some Magpie properties, such as `GSbandgap`, `GSmagmom`, and `SpaceGroupNumber`, describe elemental reference states rather than the compound itself.
+
 ## Interactive Challenge Notes
 
 Suggested timing: 20 to 30 minutes.

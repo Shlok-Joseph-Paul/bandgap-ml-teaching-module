@@ -13,7 +13,7 @@ Students work through a Jupyter notebook that uses:
 - `pymatgen`
 - `matminer`
 
-The notebook guides students through loading experimental materials data, parsing chemical formulas, generating composition descriptors, training regression models, evaluating predictions, and reflecting on model limitations.
+The notebook guides students through loading experimental materials data, parsing chemical formulas, generating composition descriptors, training regression models, evaluating predictions, and reflecting on model limitations. The notebook also includes a Magpie descriptor explorer that helps students interpret the elemental-property features used by the model.
 
 ## Student quick start
 
