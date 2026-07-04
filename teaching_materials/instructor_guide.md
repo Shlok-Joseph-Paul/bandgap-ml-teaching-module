@@ -102,6 +102,21 @@ Exact numerical results may vary with package versions and random seeds, but stu
 - feature importances that often include elemental property statistics from the Magpie preset, and
 - clear evidence that composition-only descriptors are useful but incomplete.
 
+## Instructor Explanation Notes
+
+Use these short explanations when introducing or debriefing the major concepts.
+
+- `pymatgen`: Explain that a formula string is just text until it is parsed. `pymatgen` turns formulas such as `CsPbBr3` into composition objects that know the elements and stoichiometric ratios.
+- `matminer`: Explain that `matminer` connects materials objects to machine learning by calculating descriptors from compositions, structures, or other materials data.
+- Featurization: Emphasize that most machine-learning models need numerical inputs. Featurization is the translation from chemical representation to numerical descriptor table.
+- Baseline model: Present the baseline as a sanity check. If a complex model cannot beat average-band-gap prediction, it has not learned useful structure-property patterns.
+- Random forest: Describe it as many decision trees voting or averaging together. It is useful for nonlinear patterns but does not automatically understand physics.
+- Gradient boosting: Contrast it with random forests. Boosting builds trees sequentially to correct earlier mistakes, which may improve accuracy but can still miss chemistry absent from the features.
+- MAE/R2: MAE has the same units as the target, so students can interpret it directly in eV. R2 is a relative score compared with average prediction; negative values are possible for poor models.
+- Parity plot: The diagonal is perfect prediction. Distance from the line is visual error. Systematic overprediction or underprediction can reveal model bias.
+- Feature importance: Feature importance identifies descriptors the model used, not necessarily physical causes. Correlated features and hidden variables can complicate interpretation.
+- Edge-case analysis: The worst predictions are useful teaching examples because they expose missing information such as structure, polymorph, defects, processing, sample size, or measurement conditions.
+
 ## Common Issues and Fixes
 
 ### matminer cannot load the dataset

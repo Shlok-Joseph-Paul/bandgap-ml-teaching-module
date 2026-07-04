@@ -2,6 +2,19 @@
 
 In this activity, you will use `pymatgen`, `matminer`, and `scikit-learn` to predict experimental semiconductor band gaps from chemical formula. The goal is to understand both what a composition-based machine-learning model can learn and what it cannot know from formula alone.
 
+## How the Notebook Works
+
+The notebook follows this workflow:
+
+```text
+chemical formula -> pymatgen Composition -> matminer features -> machine-learning model -> predicted band gap -> chemical interpretation
+```
+
+1. What role does `pymatgen` play in the workflow?
+2. What role does `matminer` play in the workflow?
+3. What role does `scikit-learn` play in the workflow?
+4. Why do we need both numerical evaluation and chemical interpretation?
+
 ## 1. Pre-Lab Chemistry Predictions
 
 Before running the notebook, use your chemistry intuition to predict qualitative band gap trends.
@@ -19,6 +32,7 @@ The notebook loads a public experimental band gap dataset from `matminer`.
 2. What is the target, or output variable, the model is trying to predict?
 3. What are the units of the target variable?
 4. Why might experimental band gaps vary between different literature sources or databases?
+5. Why is this activity an example of supervised learning?
 
 ## 3. Formula Parsing with pymatgen
 
@@ -34,6 +48,7 @@ The notebook loads a public experimental band gap dataset from `matminer`.
    5. TiO2
    6. CsPbBr3
 4. Why might two materials with the same formula have different band gaps?
+5. Why is a formula such as `CsPbBr3` not enough information to fully describe a real sample?
 
 ## 4. Featurization with matminer
 
@@ -43,6 +58,7 @@ Machine-learning models need numbers as inputs. `matminer` creates numerical des
 2. Why can a model not directly learn from formula strings such as `TiO2` or `GaAs`?
 3. Identify at least five chemically meaningful feature types that could help predict band gaps. Consider electronegativity, atomic number, atomic radius, group number, and valence electron count.
 4. Choose one feature type and explain why it might be related to electronic structure or bonding.
+5. Why can feature names from automated featurizers look long or technical?
 
 ## 5. Model Training and Evaluation
 
@@ -53,6 +69,8 @@ The notebook trains a `DummyRegressor` baseline and a `RandomForestRegressor`.
 3. Report the MAE and R2 for the random forest model.
 4. Which model performs better? What evidence supports your answer?
 5. What does MAE mean in units of eV?
+6. What does it mean if R2 is near 0 or negative?
+7. Why is it useful to compare a flexible model against a simple baseline?
 
 ## 6. Interpreting the Parity Plot
 
@@ -71,6 +89,7 @@ The random forest reports which features were most useful for making predictions
 2. Do these features make chemical sense? Explain one example.
 3. Why should feature importance not automatically be interpreted as causation?
 4. What other evidence would you want before making a chemical claim based on feature importance?
+5. How is permutation importance different from built-in tree feature importance?
 
 ## 8. Analyzing Model Failures
 
@@ -105,3 +124,4 @@ Use these questions to connect the machine-learning workflow back to materials c
 4. What additional data would improve the model?
 5. What is one way machine learning can help materials discovery?
 6. What is one way machine learning can mislead us?
+7. Which glossary term from the notebook was most important for your understanding, and why?
