@@ -1,5 +1,7 @@
 # Bandgap ML Teaching Module
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shlok-Joseph-Paul/bandgap-ml-teaching-module/blob/main/notebooks/01_predicting_bandgaps_student.ipynb)
+
 This repository contains a beginner-friendly materials informatics module for predicting experimental semiconductor band gaps from chemical formula. It is designed for advanced undergraduate chemistry, materials science, and related courses that want a hands-on introduction to machine learning with chemically meaningful descriptors.
 
 Students work through a Jupyter notebook that uses `pandas`, `numpy`, `matplotlib`, `scikit-learn`, `pymatgen`, and `matminer` to:
@@ -32,6 +34,14 @@ bandgap-ml-teaching-module/
 ```
 
 ## Quick Start
+
+### Run Online with Google Colab
+
+Click the **Open in Colab** badge at the top of this README to run the notebook online without installing Python locally. The notebook includes a setup cell that installs the required packages when it detects Google Colab.
+
+Note: this repository is currently private. Students will need access to the GitHub repository, or the repository should be made public, for the Colab badge to open smoothly.
+
+### Run Locally
 
 Create and activate a Python environment, then install the required packages:
 
