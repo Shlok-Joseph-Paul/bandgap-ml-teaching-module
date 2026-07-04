@@ -117,6 +117,39 @@ Use these short explanations when introducing or debriefing the major concepts.
 - Feature importance: Feature importance identifies descriptors the model used, not necessarily physical causes. Correlated features and hidden variables can complicate interpretation.
 - Edge-case analysis: The worst predictions are useful teaching examples because they expose missing information such as structure, polymorph, defects, processing, sample size, or measurement conditions.
 
+## Interactive Challenge Notes
+
+Suggested timing: 20 to 30 minutes.
+
+Suggested format: pairs or small groups. Each group should choose one target family, such as oxides, chalcogenides, halides, or pnictides, and try to improve that family-specific error while watching what happens to the overall MAE.
+
+Suggested class activity:
+
+1. Ask each group to write a chemistry-based hypothesis before touching the widgets.
+2. Have each group run at least three experiments: one chemistry-guided, one automatic top-k, and one all-feature comparison.
+3. Ask groups to record overall MAE, family MAE, selected features, and one remaining difficult material.
+4. Close with a short report-out comparing overall MAE and family-specific MAE.
+
+Warnings to emphasize:
+
+- Students may overfit their choices to one train/test split even though the split is fixed for fair comparison.
+- Feature importance and automatic feature selection can identify useful predictors, but useful predictors are not automatically physical causes.
+- A reduced-feature model that performs slightly worse may still be scientifically valuable if it is easier to interpret.
+- A more accurate model is not always the best scientific explanation.
+
+Discussion prompts:
+
+- When did chemistry intuition help, and when did it fail?
+- Is the best predictive model always the best scientific explanation?
+- Which families were easiest or hardest to improve?
+- What missing information would you want next: structure, processing, defects, dimensionality, measurement details, or sample size?
+
+Optional leaderboard activity:
+
+- Compare group results by overall MAE.
+- Compare group results by selected-family MAE.
+- Ask whether the same experiment wins both leaderboards.
+
 ## Common Issues and Fixes
 
 ### matminer cannot load the dataset

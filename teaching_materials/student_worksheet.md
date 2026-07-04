@@ -114,6 +114,34 @@ The optional notebook extension asks whether a more flexible model helps and whe
 8. Which missing information would likely help the most for the difficult edge cases: structure, processing, defects, dimensionality, or measurement details?
 9. Why might composition-only prediction be especially limited for quantum dots and nanocrystals?
 
+## Interactive Challenge: Chemistry-Guided Model Improvement
+
+In the interactive challenge, you will use chemistry intuition to choose feature groups, compare model settings, and test whether your choices improve overall or family-specific band gap prediction.
+
+State your hypothesis before running experiments:
+
+```text
+I expect ...
+```
+
+Record at least three experiments.
+
+| Experiment | Feature strategy | Feature groups or k | Model | Overall MAE | Overall R2 | Target family | Family MAE | What changed? |
+|---|---|---|---|---|---|---|---|---|
+| 1 |  |  |  |  |  |  |  |  |
+| 2 |  |  |  |  |  |  |  |  |
+| 3 |  |  |  |  |  |  |  |  |
+
+1. Which experiment performed best overall?
+2. Which experiment performed best for your selected chemical family?
+3. Did your chemistry intuition improve the model?
+4. Did automatic feature selection outperform your chemistry-guided selection?
+5. Did a reduced-feature model perform nearly as well as the all-feature model?
+6. Which materials remained difficult to predict?
+7. What important materials information was still missing?
+8. What did the mystery formula tester predict for one formula you tried?
+9. Why should the mystery formula prediction be interpreted cautiously for quantum dots or nanocrystals?
+
 ## 9. Reflection Questions
 
 Use these questions to connect the machine-learning workflow back to materials chemistry.

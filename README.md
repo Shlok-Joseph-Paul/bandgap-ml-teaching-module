@@ -25,6 +25,8 @@ The notebook guides students through loading experimental materials data, parsin
 
 No local Python installation is required.
 
+The notebook includes an optional interactive challenge where students use chemistry intuition to select features, retrain models, and analyze whether their choices improve prediction performance.
+
 ## Instructor materials
 
 - Student notebook: `notebooks/01_predicting_bandgaps_student.ipynb`
