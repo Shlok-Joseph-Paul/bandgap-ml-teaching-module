@@ -1,0 +1,142 @@
+# Instructor Guide: Bandgap ML Teaching Module
+
+## Audience
+
+This module is intended for advanced undergraduate chemistry, materials science, chemical engineering, or physics students. It assumes students have seen Python basics or have enough support to run and lightly modify a commented notebook.
+
+## Estimated Time
+
+- Short guided version: 75 minutes
+- Standard lab version: 100 to 120 minutes
+- Extended assignment with written reflection: one lab period plus homework
+
+## Prerequisites
+
+Students should have basic familiarity with:
+
+- chemical formulas and stoichiometry,
+- the concept of electronic band gaps,
+- Python variables, functions, and tables,
+- scatter plots, and
+- the idea of train/test splits.
+
+No prior machine learning experience is required.
+
+## Preparation
+
+Before class:
+
+1. Clone or distribute this repository.
+2. Create a fresh environment and run `pip install -r requirements.txt`.
+3. Open the notebook and run it once to confirm that matminer can download or access the dataset.
+4. Decide whether students will use the full dataset or a smaller sample for speed.
+5. Confirm that students can save figures into the `figures/` directory.
+
+If internet access is unreliable, run the notebook once on each teaching machine or provide a pre-downloaded version of the dataset according to your institution's data policies.
+
+## Learning Objectives
+
+After completing the activity, students should be able to:
+
+- distinguish formulas, compositions, features, and targets,
+- explain why descriptors are needed for many machine learning models,
+- calculate composition descriptors using matminer,
+- compare baseline and random forest regression performance,
+- interpret MAE and R2 in a materials context,
+- identify model failures, and
+- critique the limits of composition-only prediction.
+
+## Suggested Class Flow
+
+### Opening Discussion: 10 minutes
+
+Ask students:
+
+- What controls a semiconductor band gap?
+- Is formula alone enough to know a band gap?
+- What information is lost when a material is represented only by composition?
+
+Use Si, GaAs, TiO2, PbS, CdTe, and CsPbBr3 as familiar anchors.
+
+### Notebook Work: 55 to 80 minutes
+
+Recommended pacing:
+
+1. Dataset loading and inspection: 10 minutes
+2. Formula parsing with `pymatgen`: 10 minutes
+3. Descriptor generation with `matminer`: 15 to 25 minutes
+4. Baseline and random forest training: 15 minutes
+5. Plot interpretation and error analysis: 15 to 20 minutes
+
+### Wrap-Up: 10 to 20 minutes
+
+Discuss:
+
+- whether the random forest improves over the naive baseline,
+- which features appear important,
+- why the largest errors might be chemically interesting,
+- how structure, phase, defects, temperature, or measurement method could change the target value, and
+- what ethical or practical caution is needed when screening materials computationally.
+
+## Expected Outcomes
+
+Exact numerical results may vary with package versions and random seeds, but students should usually observe:
+
+- the random forest outperforming the mean-prediction baseline,
+- nonzero scatter around the parity line in the predicted-vs-actual plot,
+- larger errors for some chemically complex or underrepresented compositions,
+- feature importances that often include elemental property statistics from the Magpie preset, and
+- clear evidence that composition-only descriptors are useful but incomplete.
+
+## Common Issues and Fixes
+
+### matminer cannot load the dataset
+
+Check internet access and package installation. Reinstall with:
+
+```bash
+python -m pip install --upgrade matminer pymatgen
+```
+
+If the dataset name changes in a future matminer release, inspect available datasets:
+
+```python
+from matminer.datasets import get_available_datasets
+get_available_datasets()
+```
+
+### Featurization is slow
+
+For a shorter in-class run, students can set `MAX_ROWS` in the notebook to a smaller number such as `1500`. Emphasize that this speeds computation but may change model performance.
+
+### Some descriptors contain missing values
+
+This is expected. The notebook uses median imputation inside scikit-learn pipelines so missing feature values do not stop model training.
+
+### Students overinterpret feature importance
+
+Remind students that random forest feature importances are model-specific and can be biased toward correlated or high-variance features. They are clues, not mechanistic proof.
+
+## Assessment Ideas
+
+Use any combination of:
+
+- completed notebook,
+- selected worksheet responses,
+- short interpretation of the predicted-vs-actual plot,
+- explanation of one large model error,
+- one paragraph proposing a model improvement, or
+- a brief comparison of composition-only and structure-aware approaches.
+
+## Extension Activities
+
+- Replace the random forest with ridge regression, gradient boosting, or k-nearest neighbors.
+- Compare performance using only simple stoichiometric features versus the full matminer feature set.
+- Use cross-validation instead of a single train/test split.
+- Add uncertainty estimates using repeated train/test splits.
+- Compare experimental band gaps with computed band gaps from another dataset.
+- Ask students to research one high-error compound and report possible polymorphs or measurement complications.
+
+## Instructor Notes on Framing
+
+This module should not be framed as "machine learning solves band gaps." A better framing is: "machine learning can identify statistical patterns in composition-property data, and those patterns are scientifically useful when interpreted with chemical judgment." The strongest learning moments often come from the errors.
