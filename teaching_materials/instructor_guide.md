@@ -202,6 +202,8 @@ Use any combination of:
 - one paragraph proposing a model improvement, or
 - a brief comparison of composition-only and structure-aware approaches.
 
+For a more formal assignment, use `teaching_materials/assessment_rubric.md`. For sample responses and grading calibration, use `teaching_materials/instructor_answer_key.md`.
+
 ## Extension Activities
 
 - Use the included optional extension for a longer class or homework assignment.

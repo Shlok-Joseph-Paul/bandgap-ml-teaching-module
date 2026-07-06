@@ -32,6 +32,8 @@ The notebook includes an optional interactive challenge where students use chemi
 - Student notebook: `notebooks/01_predicting_bandgaps_student.ipynb`
 - Student worksheet: `teaching_materials/student_worksheet.md`
 - Instructor guide: `teaching_materials/instructor_guide.md`
+- Instructor answer key: `teaching_materials/instructor_answer_key.md`
+- Assessment rubric: `teaching_materials/assessment_rubric.md`
 - Manuscript outline: `manuscript/manuscript_outline.md`
 - Generated figures: `figures/`
 
@@ -63,7 +65,9 @@ bandgap-ml-teaching-module/
 |   `-- .gitkeep
 |-- teaching_materials/
 |   |-- student_worksheet.md
-|   `-- instructor_guide.md
+|   |-- instructor_guide.md
+|   |-- instructor_answer_key.md
+|   `-- assessment_rubric.md
 `-- manuscript/
     `-- manuscript_outline.md
 ```
